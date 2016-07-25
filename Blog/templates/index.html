@@ -7,7 +7,11 @@
     <body>
         <div class="">
             <h1>hello,{% if name %}{{name}}{% else %}2016{% endif %}</h1>
-
+            {% if not known %}
+            <p>Pleased to meet you!</p>
+            {% else %}
+            <p>Happy to see you again!</p>
+            {% endif %}
         </div>
         <form class=""  method="POST">
             {{form.hidden_tag()}}
