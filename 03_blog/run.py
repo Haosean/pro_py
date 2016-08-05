@@ -1,27 +1,43 @@
-import os
-from app import create_app, db
-from app.models import User, Role
-from flask.ext.script import Manager, Shell
-from flask.ext.migrate import Migrate, MigrateCommand
+from flask import  Flask, render_template,session
+from flask_script import Manager
+from flask_bootstrap import Bootstrap
+from flask_wtf import Form
+from wtforms import  StringField, SubmitField
+from wtforms.validators import Required
+from flask_moment import Moment
 
-app = create_app(os.getenv('FLASK_CONFIG') or 'default')
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'dsadfdsafasdf'
 manager = Manager(app)
-migrate = Migrate(app, db)
+bootstrap = Bootstrap(app)
+moment = Moment(app)
+
+class Nameform(Form):
+    name = StringField('what is u name?', validators=[Required()])
+    submit = SubmitField('submit')
 
 
-def make_shell_context():
-    return dict(app=app, db=db, User=User, Role=Role)
+@app.errorhandler(404)
+def page_not_found(e):
+    render_template('404.html'), 404
 
-manager.add_command("shell", Shell(make_context=make_shell_context))
-manager.add_command('db', MigrateCommand)
+@app.errorhandler(500)
+def internal_error(e):
+    return render_template('500.html'), 500
 
+@app.route('/', methods=['GET','POST'])
+def index():
+    name = None
+    form = Nameform()
+    if form.validate_on_submit():
+        session['name'] = form.name.data
+        form.name.data= ''
+    return render_template('index.html', form = form, name = session.get('name'))
 
-@manager.command
-def test():
-    """Run the unit tests."""
-    import unittest
-    tests = unittest.TestLoader().discover('tests')
-    unittest.TextTestRunner(verbosity=2).run(tests)
+# @app.route('/user/<name>')
+# def index(name):
+#     return render_template('index.html',name=name)
+
 
 if __name__ == '__main__':
     manager.run()
