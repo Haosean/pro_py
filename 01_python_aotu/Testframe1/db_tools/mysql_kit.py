@@ -39,10 +39,10 @@ class mysqlOperating(object):
 
 
 def test():
-    sql = "select * from MyClass"
+    sql = "select gst_id,gst_user,gst_title,gst_content,gst_time from book"
     sql_1 = "select gst_id,gst_user from book"
     c = mysqlOperating()
-    res = c.ExecQury(sql)
+    res = c.ExecQury(sql_1)
     # print res
     # # con =MySQLdb.connect()
     # print dir(res)
