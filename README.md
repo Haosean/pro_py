@@ -7,3 +7,5 @@
 
 # python 常用包
 [链接](http://www.v2ex.com/t/170729)
+[gevent-tutorial](http://xlambda.com/gevent-tutorial/)
+http://jingyan.baidu.com/article/4f7d5712d5f8181a2019270e.html
