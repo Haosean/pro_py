@@ -7,6 +7,8 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 from time import sleep
 
+# http://10.1.0.54/middleclient/pcManager/schoolPage.do
+
 
 def login():
     driver = webdriver.Chrome()
@@ -14,7 +16,9 @@ def login():
     base_url = "http://10.1.0.54"
     verificationErrors = []
     accept_next_alert = True
-    driver.get(base_url + "/middleclient/index.do")
+    # driver.get(base_url + "/middleclient/index.do")
+    # 进入PC控制端
+    driver.get(base_url + "/middleclient/pcManager/schoolPage.do")
     Select(driver.find_element_by_id("platform")).select_by_visible_text(
         u"河南教育局")
     driver.find_element_by_id("s_username").clear()
