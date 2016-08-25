@@ -11,6 +11,7 @@ from time import sleep
 # http://10.1.0.54/middleclient/pcManager/LessonPage.do?typeCode=1401&lessonId=ad53d86d-24d5-40fc-99c7-3a799983aa00&isZhu=1&classroomId=3b56d0d6-bae4-4e42-b0f7-0534fcbd64c9&interactType=false&created=0&mcuIds=ee8e08a4-7113-404d-ab63-e938ce14c631
 # http://10.1.0.54/middleclient/pcManager/LessonPage.do?typeCode=1401&lessonId=2ef96704-b305-4991-a1c2-b69111a1834e&isZhu=1&classroomId=7a562357-4a68-40b4-bb30-50c7da90512e&interactType=false&created=0&mcuIds=ee8e08a4-7113-404d-ab63-e938ce14c631
 # http://10.1.0.54/middleclient/pcManager/LessonPage.do?typeCode=1401&lessonId=838ff881-e1f3-4515-96c2-7e405c1bbc7c&isZhu=1&classroomId=7a562357-4a68-40b4-bb30-50c7da90512e&interactType=false&created=0&mcuIds=ee8e08a4-7113-404d-ab63-e938ce14c631
+# http://10.1.0.54/middleclient/pcManager/LessonPage.do?typeCode=1403&lessonId=3eb83aa7-c2d4-41f7-b3a5-85c3ad4e5fad&isZhu=1&classroomId=7a562357-4a68-40b4-bb30-50c7da90512e&interactType=false&created=0&mcuIds=3fc3ff07-42d7-451f-8deb-03fa86f6eebb
 
 
 def login():
@@ -19,7 +20,8 @@ def login():
     base_url = "http://10.1.0.54"
     verificationErrors = []
     accept_next_alert = True
-    driver.get(base_url + "/middleclient/pcManager/LessonPage.do?typeCode=1401&lessonId=2ef96704-b305-4991-a1c2-b69111a1834e&isZhu=1&classroomId=7a562357-4a68-40b4-bb30-50c7da90512e&interactType=false&created=0&mcuIds=ee8e08a4-7113-404d-ab63-e938ce14c631")
+    driver.get(base_url +
+               "/middleclient/pcManager/LessonPage.do?typeCode=1401&lessonId=2ef96704-b305-4991-a1c2-b69111a1834e&isZhu=1&classroomId=7a562357-4a68-40b4-bb30-50c7da90512e&interactType=false&created=0&mcuIds=ee8e08a4-7113-404d-ab63-e938ce14c631")
     Select(driver.find_element_by_id("platform")).select_by_visible_text(
         u"河南教育局")
     driver.find_element_by_id("s_username").clear()
