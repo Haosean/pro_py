@@ -10,8 +10,8 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 # url = 'http://10.1.0.44/middlecenter/service/guest/api1/v1/navigation/getNavigation'
-url = 'http://10.1.0.90/middlecenter/oauth2/authorize'
-h_ip = 'http://10.1.0.90/middlecenter'
+url = 'http://10.1.0.56/middlecenter/oauth2/authorize'
+h_ip = 'http://10.1.0.56/middlecenter'
 urlplus = '/service/oauth_api/v1/interactive/interactMcuResources/query/lesson'
 # 请求头
 # payload = {'username': 'administrator

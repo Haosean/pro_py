@@ -21,8 +21,7 @@ def getAccesssToken(host):
                'password': 'xungejiaoyu',
                'response_type': 'code',
                'platform': '29a5349d-aee2-4c30-894e-47124f4c6083',
-               'client_id': '6b4cfaea-7016-11e5-bd19-68f728833c05',
-               'redirect_uri': '/oauth2/client/oauth_callback'}
+               'client_id': '6b4cfaea-7016-11e5-bd19-68f728833c05'}
 
     # 请求
     r = requests.post(h_ip + url_oauth, data=payload)
@@ -32,7 +31,7 @@ def getAccesssToken(host):
                  type('Dummy', (dict, ),
                       dict(__getitem__=lambda s, n: n))())
 
-    return agent['access_token']
+    return agent
 
 if __name__ == '__main__':
-    print getAccesssToken('10.1.0.54')
+    print getAccesssToken('10.1.0.56')

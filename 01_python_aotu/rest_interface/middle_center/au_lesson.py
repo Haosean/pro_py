@@ -8,7 +8,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
-host = '10.1.0.54'
+host = '10.1.0.56'
 h_ip = 'http://' + host + '/middlecenter'
 urlplus = '/service/oauth_api/v1/interactive/interactMcuResources/query/lesson'
 
